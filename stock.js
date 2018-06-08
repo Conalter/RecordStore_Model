@@ -5,4 +5,4 @@ var Stock = function (artist, title, genre, price){
   this.price = price;
 };
 
-model.exports = Stock; 
+module.exports = Stock; 
