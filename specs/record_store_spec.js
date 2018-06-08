@@ -29,4 +29,8 @@ describe('Record_Store', function() {
     assert.strictEqual(record_store.inventory.length, 5);
   });
 
+  it("should print out the Record's properties as a string", function() {
+    assert.strictEqual(stock1.info(), "Artist: Atoms For Peace, Title: AMOK, Genre: indie-rock, Price: 20");
+  });
+
 });
