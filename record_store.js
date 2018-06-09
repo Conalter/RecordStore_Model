@@ -19,4 +19,11 @@ Record_Store.prototype.getShopBalance = function() {
   return this.balance();
 }
 
+Record_Store.prototype.getStockValue = function() {
+  return this.inventory.reduce(function(sum, stock){
+    return sum + stock.price;
+  }, 0);
+  // return `Stock Value: ${stock.price}`;
+}
+
 module.exports = Record_Store;

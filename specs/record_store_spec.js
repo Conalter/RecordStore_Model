@@ -41,4 +41,8 @@ describe('Record_Store', function() {
     assert.strictEqual(record_store.balance, 1000);
   });
 
+  it("should report financial situation of the shop (stock value)", function() {
+    assert.strictEqual(record_store.getStockValue(), 90)
+  });
+
 });
