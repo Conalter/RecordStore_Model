@@ -1,6 +1,7 @@
 var assert = require('assert');
 var Record_Store = require('../record_store.js');
-var Stock = require('../stock');
+var Stock = require('../stock.js');
+var Collector = require('../collector.js');
 
 describe('Record_Store', function() {
 
@@ -10,14 +11,16 @@ describe('Record_Store', function() {
   var stock4;
   var stock5;
   var record_store;
+  var collector;
 
   beforeEach(function() {
+    record_store = new Record_Store();
     stock1 = new Stock("Atoms For Peace", "AMOK", "indie-rock", 20);
     stock2 = new Stock("Thom Yorke", "The Eraser", "indie-rock", 20);
     stock3 = new Stock("Radiohead", "Pablo Honey", "indie-rock", 10);
     stock4 = new Stock("Johnny Greenwood", "There Will Be Blood OST", "soundtrack", 20);
     stock5 = new Stock("Philip Selway", "Weatherhouse", "indie-rock", 20);
-    record_store = new Record_Store();
+    collector = new Collector("Big Daddy Kane", 60);
     record_store.addStock(stock1);
     record_store.addStock(stock2);
     record_store.addStock(stock3);

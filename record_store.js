@@ -1,5 +1,5 @@
-var Record_Store = function(){
-  this.name = "Goldrush Records";
+var Record_Store = function(store_name, city, balance){
+  this.store_name = "Gold Rush Records";
   this.city = "Perth";
   this.balance = 1000;
   this.inventory = [];
