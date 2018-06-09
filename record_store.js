@@ -9,4 +9,10 @@ Record_Store.prototype.addStock = function (stock) {
   this.inventory.push(stock);
 }
 
+Record_Store.prototype.listInventory = function () {
+  return this.inventory.map(function(stock) {
+    return stock.info();
+  });
+}
+
 module.exports = Record_Store;

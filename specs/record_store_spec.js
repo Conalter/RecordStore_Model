@@ -33,4 +33,8 @@ describe('Record_Store', function() {
     assert.strictEqual(stock1.info(), "Artist: Atoms For Peace, Title: AMOK, Genre: indie-rock, Price: 20");
   });
 
+  it("should print a method that lists the inventory", function() {
+    assert.deepStrictEqual(record_store.listInventory(), [stock1.info(), stock2.info(), stock3.info(), stock4.info(), stock5.info()]);
+  });
+
 });
