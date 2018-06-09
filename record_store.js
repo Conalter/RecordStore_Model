@@ -19,11 +19,21 @@ Record_Store.prototype.getShopBalance = function() {
   return this.balance();
 }
 
+// Record_Store.prototype.getStockValue = function() {
+//   return this.inventory.reduce(function(sum, stock){
+//     return sum + stock.price;
+//   }, 0);
+// }
+
 Record_Store.prototype.getStockValue = function() {
-  return this.inventory.reduce(function(sum, stock){
+  const total = this.inventory.reduce(function(sum, stock){
     return sum + stock.price;
   }, 0);
-  // return `Stock Value: ${stock.price}`;
+  return `Stock Value: ${total}`;
+}
+
+Record_Store.prototype.findGenre = function(genre) {
+  return this.inventory.find(stock => stock.genre === genre);
 }
 
 module.exports = Record_Store;

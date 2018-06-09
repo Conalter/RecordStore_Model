@@ -42,7 +42,11 @@ describe('Record_Store', function() {
   });
 
   it("should report financial situation of the shop (stock value)", function() {
-    assert.strictEqual(record_store.getStockValue(), 90)
+    assert.strictEqual(record_store.getStockValue(), "Stock Value: 90")
+  });
+
+  it("should show all records of a given genre", function() {
+    assert.strictEqual(record_store.findGenre("soundtrack"), stock4);
   });
 
 });
