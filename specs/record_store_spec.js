@@ -37,4 +37,8 @@ describe('Record_Store', function() {
     assert.deepStrictEqual(record_store.listInventory(), [stock1.info(), stock2.info(), stock3.info(), stock4.info(), stock5.info()]);
   });
 
+  it("should report financial situation of the shop (balance)", function() {
+    assert.strictEqual(record_store.balance, 1000);
+  });
+
 });

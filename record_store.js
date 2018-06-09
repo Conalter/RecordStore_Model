@@ -15,4 +15,8 @@ Record_Store.prototype.listInventory = function () {
   });
 }
 
+Record_Store.prototype.getShopBalance = function() {
+  return this.balance();
+}
+
 module.exports = Record_Store;
