@@ -20,7 +20,8 @@ describe('Record_Store', function() {
     stock3 = new Stock("Radiohead", "Pablo Honey", "indie-rock", 10);
     stock4 = new Stock("Johnny Greenwood", "There Will Be Blood OST", "soundtrack", 20);
     stock5 = new Stock("Philip Selway", "Weatherhouse", "indie-rock", 20);
-    collector = new Collector("Big Daddy Kane", 60);
+    collector1 = new Collector("Big Daddy Kane", 60);
+    collector2 = new Collector("Super Upul", 100);
     record_store.addStock(stock1);
     record_store.addStock(stock2);
     record_store.addStock(stock3);
@@ -51,5 +52,9 @@ describe('Record_Store', function() {
   it("should show all records of a given genre", function() {
     assert.strictEqual(record_store.findGenre("soundtrack"), stock4);
   });
+
+  it("should show that the collector has bought the record", function() {
+    assert.strictEqual(collector1.hasRecord.length, 1);
+  })
 
 });
