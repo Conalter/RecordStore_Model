@@ -4,8 +4,16 @@ var Collector = function(name, wallet) {
   this.collection = [];
 }
 
-Collector.prototype.hasRecord = function(stock) {
-  return this.collection.push(stock);
-}
+Collector.prototype.buysRecord = function(stock) {
+  this.collection.push(stock);
+  this.wallet -= stock.price;
+};
+
+// Collector.prototype.sellsRecord = function(stock) {
+//   this.collection.pop(stock);
+//   this.wallet += stock.price;
+// };
+
+// Collector.prototype.changeWallet
 
 module.exports = Collector;

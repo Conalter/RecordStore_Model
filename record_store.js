@@ -1,7 +1,7 @@
 var Record_Store = function(store_name, city, balance){
-  this.store_name = "Gold Rush Records";
-  this.city = "Perth";
-  this.balance = 1000;
+  this.store_name = store_name;
+  this.city = city;
+  this.balance = balance;
   this.inventory = [];
 };
 
@@ -35,5 +35,20 @@ Record_Store.prototype.getStockValue = function() {
 Record_Store.prototype.findGenre = function(genre) {
   return this.inventory.find(stock => stock.genre === genre);
 }
+
+Record_Store.prototype.RecordStoreSellStock = function(stock) {
+  this.balance += stock.price;
+};
+
+Record_Store.prototype.RecordStoreBuyStock = function(stock) {
+  this.balance -= stock.price;
+};
+
+// RecordStore.prototype.sellRecord = function (stock) {
+//  let index = this.inventory.indexOf(stock);
+//  if (index !== -1) {
+//  this.inventory.splice(index, 1);
+//    } this.balance += record.price;
+//  };
 
 module.exports = Record_Store;
