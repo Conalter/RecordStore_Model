@@ -44,6 +44,10 @@ Record_Store.prototype.RecordStoreBuyStock = function(stock) {
   this.balance -= stock.price;
 };
 
+Record_Store.prototype.RecordStoreReduceInventory = function(stock) {
+  this.inventory.pop(stock);
+};
+
 // RecordStore.prototype.sellRecord = function (stock) {
 //  let index = this.inventory.indexOf(stock);
 //  if (index !== -1) {

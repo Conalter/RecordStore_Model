@@ -67,6 +67,11 @@ describe('Record_Store', function() {
     assert.strictEqual(record_store.balance, 980);
   })
 
+  it("should show the store's inventory decreased after transaction", function() {
+    record_store.RecordStoreReduceInventory(stock1);
+    assert.strictEqual(record_store.inventory.length, 4)
+  })
+
   // it("should show that the collector has bought a record", function() {
   //   assert.strictEqual(collector1.buysRecord.length, 1);
   //   assert.strictEqual(collector1.sellsRecord.length, 0);
