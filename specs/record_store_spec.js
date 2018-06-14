@@ -72,22 +72,16 @@ describe('Record_Store', function() {
     assert.strictEqual(record_store.inventory.length, 4)
   })
 
-  it("should show that the collector has bought a record", function() {
+  it("should show that the collector has bought & sold a record", function() {
     collector1.buysRecord(stock1);
     assert.strictEqual(collector1.collection.length, 1);
     collector1.sellsRecord();
     assert.strictEqual(collector1.collection.length, 0);
   });
 
-  // it("should show that the collector has bought a record", function() {
-  //   collector1.buysRecord();
-  //   assert.strictEqual(collector1.wallet, 40);
-  // });
-
-  // it("should show that the collector has sold a record", function() {
-  //   assert.strictEqual(collector2.buysRecord.length, 1);
-  //   assert.strictEqual(collector2.sellsRecord.length, 0);
-  // });
+  it("should show that the collector has money", function() {
+    assert.strictEqual(collector1.wallet, 60);
+  });
 
   // it("should show that the collector has bought the record", function() {
   //   assert.strictEqual(record_store.sellRecord() {
