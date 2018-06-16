@@ -93,6 +93,11 @@ describe('Record_Store', function() {
     assert.strictEqual(collector1.wallet, 80);
     });
 
+  it("should show that the collector can decrease money", function() {
+    collector1.wallet -= 20;
+    assert.strictEqual(collector1.wallet, 40);
+    });
 
-    
+
+
   });
