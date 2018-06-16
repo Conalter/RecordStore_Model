@@ -89,15 +89,27 @@ describe('Record_Store', function() {
   });
 
   it("should show that the collector can increase money", function() {
-    collector1.wallet += 20;
+    collector1.wallet += stock1.price;
     assert.strictEqual(collector1.wallet, 80);
     });
 
   it("should show that the collector can decrease money", function() {
-    collector1.wallet -= 20;
+    collector1.wallet -= stock1.price;
     assert.strictEqual(collector1.wallet, 40);
     });
 
+  it("should show that the store can sell an item of stock to a collector", function() {
+    collector2.buysRecord(stock5);
+    collector2.wallet -= stock5.price;
 
+    record_store.RecordStoreSellStock(stock5);
+    record_store.RecordStoreReduceInventory(stock5);
+
+    assert.strictEqual(collector2.collection.length, 1);
+    assert.strictEqual(collector2.wallet, 80);
+
+    assert.strictEqual(record_store.inventory.length, 4);
+    assert.strictEqual(record_store.balance, 1020);
+  });
 
   });
