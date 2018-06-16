@@ -6,13 +6,13 @@ var Collector = function(name, wallet) {
 
 Collector.prototype.buysRecord = function(stock) {
   this.collection.push(stock);
-  this.wallet -= stock.price;
+  // this.wallet -= stock.price;
 };
 
-// Collector.prototype.sellsRecord = function(stock) {
-//   this.collection.pop(stock);
-//   this.wallet += stock.price;
-// };
+Collector.prototype.sellsRecord = function() {
+  this.collection.pop();
+  // this.wallet += stock.price;
+};
 
 // Collector.prototype.changeWallet
 

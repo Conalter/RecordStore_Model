@@ -72,6 +72,11 @@ describe('Record_Store', function() {
     assert.strictEqual(record_store.inventory.length, 4)
   })
 
+  it("should show the store's inventory increase after transaction", function() {
+    record_store.addStock(stock1);
+    assert.strictEqual(record_store.inventory.length, 6)
+  })
+
   it("should show that the collector has bought & sold a record", function() {
     collector1.buysRecord(stock1);
     assert.strictEqual(collector1.collection.length, 1);
@@ -83,13 +88,11 @@ describe('Record_Store', function() {
     assert.strictEqual(collector1.wallet, 60);
   });
 
-  // it("should show that the collector has bought the record", function() {
-  //   assert.strictEqual(record_store.sellRecord() {
-  //     collector1.hasRecord.length, 1);
-  //     record_store.inventory.length, 4);
-  //   });
-  // })
+  it("should show that the collector can increase money", function() {
+    collector1.wallet += 20;
+    assert.strictEqual(collector1.wallet, 80);
+    });
 
 
-
-});
+    
+  });

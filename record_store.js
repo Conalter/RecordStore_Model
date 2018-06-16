@@ -48,6 +48,10 @@ Record_Store.prototype.RecordStoreReduceInventory = function(stock) {
   this.inventory.pop(stock);
 };
 
+Record_Store.prototype.RecordStoreIncreaseInventory = function(stock) {
+  this.inventory.push(stock);
+};
+
 // RecordStore.prototype.sellRecord = function (stock) {
 //  let index = this.inventory.indexOf(stock);
 //  if (index !== -1) {
